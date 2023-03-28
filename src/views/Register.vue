@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="position_center">
-        <h2 class="title is-4 mt-5">Cadastro de Usuário</h2>
+        <h2 class="title is-4 mt-5">Registro de Usuário</h2>
 
         <div v-if="error != undefined">
             <div class="notification is-danger is-light">
