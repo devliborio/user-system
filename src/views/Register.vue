@@ -5,13 +5,13 @@
 
         <div v-if="error != undefined">
             <div class="notification is-danger is-light">
-                {{ error }} <br>
+                {{ error }} 
             </div>
         </div>
 
         <div v-if="success != undefined">
             <div class="notification is-primary is-light">
-                {{ success }} <br>
+                {{ success }} 
             </div>
         </div>
 
@@ -57,7 +57,7 @@ export default {
             name: '',
             password: '',
             email: '',
-            role: 0,
+            role: '',
             error: undefined,
             success: undefined
         }
