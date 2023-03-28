@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view/>
+    <nav>
+      <a><router-link to="/">Home</router-link> | </a>
+      <a><router-link to="/register">Cadastrar-se</router-link> | </a>
+      <a><router-link to="/login">Login</router-link></a>
+    </nav>
+    <router-view />
   </div>
 </template>
 
@@ -10,6 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  text-align: center;
 }
 
 nav {
