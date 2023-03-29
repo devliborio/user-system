@@ -4,13 +4,13 @@
         <h2 class="title is-4 mt-5">Registro de Usuário</h2>
 
         <div v-if="error != undefined">
-            <div class="notification is-danger is-light">
+            <div class="notification is-danger is-light" style="width: 50%; margin-left: 25%;">
                 {{ error }} 
             </div>
         </div>
 
         <div v-if="success != undefined">
-            <div class="notification is-primary is-light">
+            <div class="notification is-primary is-light" style="width: 50%; margin-left: 25%;">
                 {{ success }} 
             </div>
         </div>
