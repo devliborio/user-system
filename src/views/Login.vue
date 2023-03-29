@@ -4,13 +4,13 @@
         <h2 class="title is-4 mt-5">Login</h2>
 
         <div v-if="error != undefined">
-            <div class="notification is-danger is-light">
+            <div class="notification is-danger is-light" style="width: 50%; margin-left: 25%;">
                 {{ error }} <br>
             </div>
         </div>
 
         <div v-if="success != undefined">
-            <div class="notification is-primary is-light">
+            <div class="notification is-primary is-light" style="width: 50%; margin-left: 25%;">
                 {{ success }} <br>
             </div>
         </div>
@@ -55,7 +55,7 @@ export default {
                 password: this.password,
                 email: this.email,
             }).then((res) => {
-                localStorage.setItem('Token: ', res.data.token);
+                localStorage.setItem('token', res.data.token);
                 this.success = "Login efetuado!";
             }).catch((err) => {
                 let msgErro = err.response.data.err;
