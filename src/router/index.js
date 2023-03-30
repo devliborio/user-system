@@ -18,8 +18,6 @@ const routes = [
           }
         }
 
-        console.log(request)
-
         axios.post("http://localhost:8686/validate",{},request).then((res) => {
           console.log(res)
           next();
