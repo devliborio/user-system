@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Register from '../views/Register.vue'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
+import Users from '../views/Users.vue'
 import axios from 'axios'
 
 function AdminAuth(to, from, next) {
@@ -13,7 +14,7 @@ function AdminAuth(to, from, next) {
       }
     }
 
-    axios.post("http://localhost:8686/validate", {}, request).then((res) => {
+    axios.post("http://localhost:8686/validate", {}, request).then((res) => { // Se for método POST precisa colocar o {} para o get por exemplo n precisa!
       console.log(res)
       next();
     }).catch((err) => {
@@ -46,6 +47,13 @@ const routes = [
     name: 'login',
     component: Login
   },
+
+  {
+    path: '/users',
+    name: 'users',
+    component: Users,
+    beforeEnter: AdminAuth
+  }
 ]
 
 const router = createRouter({

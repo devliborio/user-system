@@ -17,6 +17,7 @@
       <div class="navbar-start">
         <a class="navbar-item"><router-link to="/">Home</router-link></a>
         <a class="navbar-item"><router-link to="/register">Registro de Usuário</router-link></a>
+        <a class="navbar-item"><router-link to="/users">Listagem de Usuários</router-link></a>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More</a>
