@@ -23,26 +23,27 @@
                         <td v-else-if="user.role == 1">Administrador</td>
                         <td>
                             <button class="button is-warning is-light is-normal">Editar</button>
-                            <button class="button is-danger is-light is-normal spacing_item">Deletar</button>
+                            <button @click="viewModal(user.id)" class="button is-danger is-light is-normal spacing_item">Deletar</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <div class="modal is-active">
+            <div :class="{modal: true, 'is-active': showModal}">
                 <div class="modal-background"></div>
                 <div class="modal-card">
                     <header class="modal-card-head">
                         <p class="modal-card-title">Deleção de Usuário</p>
-                        <button class="delete" aria-label="close"></button>
+                        <button @click="hidModal" class="delete" aria-label="close"></button>
                     </header>
                     <section class="modal-card-body">
                         <h1 class="title is-4">Você realmente deseja deletar?</h1>
-                        <p>A deleção do usuário é permanente e irreversível, caso seja efetuada não poderá ser desfeita, caso queira prosseguir com a exclusão basta clicar no botão abaixo </p>
+                        <p>A deleção do usuário é permanente e irreversível, caso seja efetuada não poderá ser desfeita,
+                            caso queira prosseguir com a exclusão basta clicar no botão abaixo </p>
                     </section>
                     <footer class="modal-card-foot">
-                        <button class="button is-success">Confirmar</button>
-                        <button class="button">Cancel</button>
+                        <button class="button is-success">Sim, desejo deletar</button>
+                        <button  @click="hidModal" class="button">Cancelar</button>
                     </footer>
                 </div>
             </div>
@@ -72,9 +73,21 @@ export default {
 
     data() {
         return {
-            users: []
+            users: [],
+            showModal: false
         }
-    }
+    },
+
+    methods: {
+        hidModal(){
+            this.showModal = false;
+        },
+
+        viewModal(id){
+            console.log("ID DO USUÁRIO:" + id);
+            this.showModal = true;
+        }
+    },
 }
 </script>
 
