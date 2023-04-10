@@ -22,7 +22,7 @@
                         <td v-if="user.role == 0">Padrão</td>
                         <td v-else-if="user.role == 1">Administrador</td>
                         <td>
-                            <button class="button is-warning is-light is-normal">Editar</button>
+                            <router-link :to="{ name: 'edit', params:{ id: user.id } }"><button class="button is-warning is-light is-normal">Editar</button></router-link>
                             <button @click="viewModal(user.id)"
                                 class="button is-danger is-light is-normal spacing_item">Deletar</button>
                         </td>
